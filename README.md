@@ -3,7 +3,6 @@
 </p>
 
 ### 框架介绍
-<h3 align="center">xiaonuo-vue为XiaoNuo生态技术框架环境中的vue版本</h3>
 <h3 align="center">前后端分离架构，开箱即用，紧随前沿技术</h3>
 
 <p align="center">     
@@ -23,32 +22,8 @@
         <a href="./LICENSE">
             <img src="https://img.shields.io/badge/license-Apache%202-red" alt="license Apache 2.0">
         </a>
-        <a href="https://gitee.com/xiaonuobase/xiaonuo-vue">
-            <img src="https://gitee.com/xiaonuobase/xiaonuo-vue/badge/star.svg?theme=dark" alt="Gitee star">
-        </a>
-        <a href="https://gitee.com/xiaonuobase/xiaonuo-vue">
-            <img src="https://gitee.com/xiaonuobase/xiaonuo-vue/badge/fork.svg?theme=dark" alt="Gitee fork">
-        </a>
-        <a href="https://github.com/xiaonuobase/xiaonuo-vue">
-            <img src="https://img.shields.io/github/stars/xiaonuobase/xiaonuo-vue?style=social" alt="GitHub stars">
-        </a>
-        <a href="https://github.com/xiaonuobase/xiaonuo-vue">
-            <img src="https://img.shields.io/github/forks/xiaonuobase/xiaonuo-vue?style=social" alt="GitHub forks">
-        </a>
-        <a href="https://github.com/xiaonuobase/xiaonuo-vue">
-            <img src="https://img.shields.io/github/repo-size/xiaonuobase/xiaonuo-vue" alt="size">
-        </a>
     </p>
 </p>
-
-### 其他版本
-
-* layui单体版本：https://gitee.com/xiaonuobase/xiaonuo-layui
-* vue前后分离版本：https://gitee.com/xiaonuobase/xiaonuo-vue
-* cloud微服务前后分离版本：https://gitee.com/xiaonuobase/xiaonuo-cloud
-* 我们的其他产品线同样开源，如需关注最新动态可加入QQ群聊探讨：[732230670](https://wpa.qq.com/msgrd?v=3&uin=732230670&_blank)
-* 如果我们的产品能满足您的需求，很期待您给我们右上角点个 star
-
 ### 快速启动
 
 您的开发电脑需要安装：NodeJs（最新版）、npm或yarn（最新版）建议使用yarn、Mysql5.7、Jdk1.8、Maven3.6.3（配置阿里仓库地址）、开发工具推荐idea
@@ -57,33 +32,6 @@
 * 启动后端：打开application-local中配置数据库信息，运行XiaoNuoApplication类即可启动
 * 浏览器访问：http://localhost:81 （默认前端端口为：81，后端端口为：82）
 
-### 框架说明及后续补充
-
-* 纯手研发搭建框架脚手架，在自己用的时候，也为各位小伙伴打下坚固的接私活利器。
-* 后续我们会行发多个版本，将适配多个数据库环境，国产化环境，并且根据多年经验会出相关系统中用到的案例，提供给大家使用！
-* 如需了解我们更多，请移步官网：https://xiaonuo.vip
-* 当然，有问题讨论的小伙伴还可以加入我们的QQ技术群：[732230670](https://wpa.qq.com/msgrd?v=3&uin=732230670&_blank)，一起学习讨论。
-
-### 在线演示
-
-* 账号密码：superAdmin/123456，地址：https://vue.xiaonuo.vip
-
-### 在线文档
-
-* https://doc.xiaonuo.vip
-
-### 效果图
-
-<table>
-    <tr>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-62d4b535dadbfa8ff343cb290d58be43ef0.png"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-98b3e79f8008b6319ce6394d80172ff02a3.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://images.gitee.com/uploads/images/2020/1208/133142_37420daa_1980003.jpeg"/></td>
-        <td><img src="https://images.gitee.com/uploads/images/2020/1208/133250_3749a395_1980003.jpeg"/></td>
-    </tr>
-</table>
 
 ### 框架优势
 
@@ -122,38 +70,5 @@
 18. 邮件发送、发送邮件功能。
 19. 短信发送、短信发送功能，可使用阿里云sms，腾讯云sms，支持拓展。
 
-### 参与贡献
 
-- 欢迎各路英雄好汉参与xiaonuo全系版本代码贡献，期待您的加入！
-- 1.  Fork 本仓库
-- 2.  新建 Feat_xxx 分支
-- 3.  提交代码
-- 4.  新建 Pull Request
-
-### 更新日志：
-
-#### v1.2.0
-- 1、适配Oracle数据库
-- 2、日志列表增加时间段查询
-- 3、修正邮箱数据问题
-
-#### v1.1.1
-- 1、代码生成中查询条件增加为全部字段，可根据不同程序删减代码
-
-#### v1.1
-- 1、新增代码生成器，以独立的模块存在，更加方便维护
-- 2、修复多处细节问题
-
-### 版权说明
-
-- XiaoNuo生态技术框架全系版本采用 Apache License2.0协议
-- 请务必尊重原著产品，如果目前开源学习源码不能满足您的商业需求，可联系客服进行授权
-
-### XiaoNuo技术团队荣誉作品
-
-| 成员组成 | 负责内容 |
-| :---: | :---: |
-| 俞宝山 | 全栈 |
-| 徐玉祥 | 全栈 | 
-| 董夏雨 | 全栈 |
-
+### 原框架引自xiaonuo
