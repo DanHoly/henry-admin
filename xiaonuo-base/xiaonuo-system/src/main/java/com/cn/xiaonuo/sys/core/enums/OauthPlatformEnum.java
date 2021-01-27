@@ -43,7 +43,11 @@ public enum OauthPlatformEnum {
     /**
      * github
      */
-    GITHUB("github", "github");
+    GITHUB("github", "github"),
+    /**
+     * 支付宝
+     */
+    ALI_PAY("ali_pay", "支付宝");
 
     private final String code;
 

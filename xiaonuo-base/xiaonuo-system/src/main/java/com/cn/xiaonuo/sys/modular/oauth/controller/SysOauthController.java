@@ -29,6 +29,7 @@ import com.cn.xiaonuo.core.consts.SymbolConstant;
 import com.cn.xiaonuo.core.context.constant.ConstantContextHolder;
 import com.cn.xiaonuo.sys.modular.oauth.service.SysOauthService;
 import me.zhyd.oauth.model.AuthCallback;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,7 @@ import java.io.IOException;
  * @date 2020/7/28 16:38
  **/
 @RestController
+@CrossOrigin
 public class SysOauthController {
 
     @Resource

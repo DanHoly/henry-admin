@@ -75,3 +75,15 @@ export function getSmsCaptcha (parameter) {
     params: parameter
   })
 }
+/**
+ * 第三方登陆
+ *
+ * @author yubaoshan
+ * @date 2020/5/26 19:06
+ */
+export function oauthLogin (type) {
+  return axios({
+    url: '/oauth/render/gitee',
+    method: 'get'
+  })
+}

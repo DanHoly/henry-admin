@@ -300,6 +300,19 @@ public class ConstantContextHolder {
         oauthConfigs.setRedirectUri(xiaoNuoRedirectUri);
         return oauthConfigs;
     }
+    public static OauthConfigs getAliOauthConfigs() {
+        String ClientId = getSysConfig("XIAONUO_OAUTH_ALI_APP_ID", String.class, true);
+        String ClientSecret = getSysConfig("XIAONUO_OAUTH_AlI_CLIENT_PUBLIC_SECRET", String.class, true);
+        String ClientPrivateSecret = getSysConfig("XIAONUO_OAUTH_AlI_CLIENT_PRIVATE_SECRET", String.class, true);
+        String RedirectUri = getSysConfig("XIAONUO_OAUTH_AlI_REDIRECT_URI", String.class, true);
+
+        OauthConfigs oauthConfigs = new OauthConfigs();
+        oauthConfigs.setClientId(ClientId);
+        oauthConfigs.setClientSecret(ClientSecret);
+        oauthConfigs.setClientPrivateSecret(ClientPrivateSecret);
+        oauthConfigs.setRedirectUri(RedirectUri);
+        return oauthConfigs;
+    }
 
     /**
      * 获取是否允许Oauth用户登陆的开关， 默认为false

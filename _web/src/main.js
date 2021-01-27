@@ -17,9 +17,10 @@ import './components/global.less'
 import { Dialog } from '@/components'
 import { hasBtnPermission } from './utils/permissions' // button permission
 import { sysApplication } from './utils/applocation'
-
+import { VueJsonp } from 'vue-jsonp'
 Vue.use(VueAxios)
 Vue.use(Dialog)
+Vue.use(VueJsonp)
 Vue.prototype.hasPerm = hasBtnPermission
 Vue.prototype.applocation = sysApplication
 Vue.config.productionTip = false

@@ -49,4 +49,9 @@ public class OauthConfigs {
      * 回调地址
      */
     private String redirectUri;
+
+    /**
+     * clientSecret
+     */
+    private String clientPrivateSecret;
 }

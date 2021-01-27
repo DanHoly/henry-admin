@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { login, getLoginUser, logout } from '@/api/modular/system/loginManage'
+import { login, getLoginUser, logout, oauthLogin } from '@/api/modular/system/loginManage'
 import { sysDictTypeTree } from '@/api/modular/system/dictManage'
 import { sysMenuChange } from '@/api/modular/system/menuManage'
 import { ACCESS_TOKEN, ALL_APPS_MENU, DICT_TYPE_TREE_DATA } from '@/store/mutation-types'
@@ -59,6 +59,17 @@ const user = {
           commit('SET_TOKEN', result)
           resolve()
         // eslint-disable-next-line handle-callback-err
+        }).catch(error => {
+          // eslint-disable-next-line prefer-promise-reject-errors
+          reject('后端未启动或代理错误')
+        })
+      })
+    },
+    OauthLogin ({ commit }) {
+      return new Promise((resolve, reject) => {
+        oauthLogin(commit).then(response => {
+          console.log(response)
+          // eslint-disable-next-line handle-callback-err
         }).catch(error => {
           // eslint-disable-next-line prefer-promise-reject-errors
           reject('后端未启动或代理错误')
@@ -165,7 +176,6 @@ const user = {
         })
       })
     }
-
   }
 }
 

@@ -44,6 +44,7 @@ import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
+import me.zhyd.oauth.request.AuthAlipayRequest;
 import me.zhyd.oauth.request.AuthGiteeRequest;
 import me.zhyd.oauth.request.AuthGithubRequest;
 import me.zhyd.oauth.request.AuthRequest;
@@ -87,8 +88,7 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
     @SuppressWarnings("all")
     @Override
     public String callback(String source, AuthCallback callback, HttpServletRequest request) {
-        AuthRequest authRequest = this.getAuthRequest(source);
-        AuthResponse<AuthUser> response = authRequest.login(callback);
+        AuthRequest authRequest = this.getAuthRequest(source);AuthResponse<AuthUser> response = authRequest.login(callback);
         if (response.ok()) {
             AuthUser authUser = response.getData();
             return doLogin(authUser);
@@ -173,7 +173,16 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
                     .clientSecret(githubOauthConfigs.getClientSecret())
                     .redirectUri(githubOauthConfigs.getRedirectUri())
                     .build(), oauthCache);
-        } else {
+        }else if (source.toLowerCase().equals(OauthPlatformEnum.ALI_PAY.getCode())) {
+            OauthConfigs aliOauthConfigs = ConstantContextHolder.getAliOauthConfigs();
+            authRequest = new AuthAlipayRequest(AuthConfig.builder()
+                    .clientId(aliOauthConfigs.getClientId())
+                    .clientSecret(aliOauthConfigs.getClientPrivateSecret())
+                    .alipayPublicKey(aliOauthConfigs.getClientSecret())
+                    .redirectUri(aliOauthConfigs.getRedirectUri())
+                    .build(), oauthCache);
+        }
+        else {
             throw new ServiceException(SysOauthExceptionEnum.OAUTH_NOT_SUPPORT);
         }
         return authRequest;

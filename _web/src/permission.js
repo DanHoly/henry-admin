@@ -17,7 +17,14 @@ const defaultRoutePath = '/welcome'
 router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
   to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${to.meta.title} - ${domTitle}`))
-  if (Vue.ls.get(ACCESS_TOKEN)) {
+
+  console.log(from)
+  console.log(Vue.ls.get(ACCESS_TOKEN))
+
+  if (Vue.ls.get(ACCESS_TOKEN) || to.query.token) {
+    if (!Vue.ls.get(ACCESS_TOKEN)) {
+      Vue.ls.set(ACCESS_TOKEN, to.query.token, 7 * 24 * 60 * 60 * 1000)
+    }
     /* has token */
     if (to.path === '/user/login') {
       next({ path: defaultRoutePath })
@@ -98,7 +105,7 @@ router.beforeEach((to, from, next) => {
       }
     }
   } else {
-    if (whiteList.includes(to.name)) {
+   if (whiteList.includes(to.name)) {
       // 在免登录白名单，直接进入
       next()
     } else {

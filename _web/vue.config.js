@@ -84,6 +84,7 @@ const vueConfig = {
 
   devServer: {
     port: 81,
+    disableHostCheck: true,
     proxy: {
       '/api': {
         target: process.env.VUE_APP_API_BASE_URL,

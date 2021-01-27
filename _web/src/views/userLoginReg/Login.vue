@@ -95,7 +95,10 @@
 
       <div class="user-login-other">
         <span>其他登录方式</span>
-        <a>
+        <a @click="clickOauthLogin($event,'gitee')">
+          <a-icon class="item-icon" type="gitlab"></a-icon>
+        </a>
+        <a @click="clickOauthLogin($event,'ali_pay')">
           <a-icon class="item-icon" type="alipay-circle"></a-icon>
         </a>
         <a>
@@ -145,13 +148,14 @@ export default {
       },
       accountLoginErrMsg: '',
       tenantOpen: false,
-      tenantsList: []
+      tenantsList: [],
+      baseUrl: process.env.VUE_APP_API_BASE_URL + '/oauth/render/gitee'
     }
   },
   created () {
   },
   methods: {
-    ...mapActions(['Login', 'Logout', 'dictTypeData']),
+    ...mapActions(['Login', 'Logout', 'dictTypeData', 'OauthLogin']),
     // handler
     handleUsernameOrEmail (rule, value, callback) {
       const { state } = this
@@ -167,6 +171,9 @@ export default {
       this.isLoginError = false
       this.customActiveKey = key
       // this.form.resetFields()
+    },
+    clickOauthLogin (event, t) {
+      window.open(process.env.VUE_APP_API_BASE_URL + '/oauth/render/' + t)
     },
     handleSubmit (e) {
       e.preventDefault()
