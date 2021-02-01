@@ -30,7 +30,6 @@ public class SimpleMailSender implements MailSender {
 
         //校验发送邮件的参数
         assertSendMailParams(sendMailParam);
-
         //spring发送邮件
         MailUtil.send(mailAccount, CollUtil.newArrayList(sendMailParam.getTo()), sendMailParam.getTitle(), sendMailParam.getContent(), false);
     }
