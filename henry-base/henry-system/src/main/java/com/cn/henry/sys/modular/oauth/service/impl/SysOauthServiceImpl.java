@@ -88,7 +88,8 @@ public class SysOauthServiceImpl extends ServiceImpl<SysOauthMapper, SysOauthUse
     @SuppressWarnings("all")
     @Override
     public String callback(String source, AuthCallback callback, HttpServletRequest request) {
-        AuthRequest authRequest = this.getAuthRequest(source);AuthResponse<AuthUser> response = authRequest.login(callback);
+        AuthRequest authRequest = this.getAuthRequest(source);
+        AuthResponse<AuthUser> response = authRequest.login(callback);
         if (response.ok()) {
             AuthUser authUser = response.getData();
             return doLogin(authUser);
