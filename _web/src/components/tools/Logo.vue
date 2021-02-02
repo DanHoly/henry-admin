@@ -25,7 +25,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: '管理平台',
+      default: 'Henry管理平台',
       required: false
     },
     showTitle: {
