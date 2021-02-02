@@ -29,7 +29,7 @@
 您的开发电脑需要安装：NodeJs（最新版）、npm或yarn（最新版）建议使用yarn、Mysql5.7、Jdk1.8、Maven3.6.3（配置阿里仓库地址）、开发工具推荐idea
 
 * 启动前端：打开_web文件夹，进行依赖下载，运行npm install或yarn命令，再运行npm run serve或 yarn run serve
-* 启动后端：打开application-local中配置数据库信息，运行XiaoNuoApplication类即可启动
+* 启动后端：打开application-local中配置数据库信息，运行HenryApplication类即可启动
 * 浏览器访问：http://localhost:81 （默认前端端口为：81，后端端口为：82）
 
 
