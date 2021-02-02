@@ -22,43 +22,67 @@ XiaoNuo采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注�
 5.在修改包名，模块名称，项目代码等时，请注明软件出处 https://gitee.com/xiaonuobase/xiaonuo-vue
 6.若您的项目无法满足以上几点，可申请商业授权，获取XiaoNuo商业授权许可，请在官网购买授权，地址为 https://www.xiaonuo.vip
  */
-package ${packageName}.${modularName}.${busName}.entity;
+package com.cn.henry.sys.modular.debt.service;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.cn.henry.core.pojo.base.entity.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import java.util.*;
-#foreach ($column in $tableField)
-    #if (${column.javaType} == 'BigDecimal')
-    import java.math.BigDecimal;
-    #end
-#end
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.cn.henry.core.pojo.page.PageResult;
+import com.cn.henry.sys.modular.debt.entity.Debt;
+import com.cn.henry.sys.modular.debt.param.DebtParam;
+import java.util.List;
 
 /**
- * ${functionName}
+ * 债务表service接口
  *
- * @author ${authorName}
- * @date ${createDateString}
+ * @author henry
+ * @date 2021-01-26 15:41:18
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
-@TableName("${tableName}")
-public class ${ClassName} extends BaseEntity {
-
-#foreach ($column in $tableField)
-#if (${column.primaryKeyFlag})
-    /**
-     * 主键
-     */
-    @TableId(type = IdType.ASSIGN_ID)
-    private ${column.javaType} ${column.columnName};
-#else
+public interface DebtService extends IService<Debt> {
 
     /**
-     * ${column.columnComment}
+     * 查询债务表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
      */
-    private ${column.javaType} ${column.columnName};
-#end
-#end
+    PageResult<Debt> page(DebtParam debtParam);
+
+    /**
+     * 债务表列表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
+     */
+    List<Debt> list(DebtParam debtParam);
+
+    /**
+     * 添加债务表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
+     */
+    void add(DebtParam debtParam);
+
+    /**
+     * 删除债务表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
+     */
+    void delete(DebtParam debtParam);
+
+    /**
+     * 编辑债务表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
+     */
+    void edit(DebtParam debtParam);
+
+    /**
+     * 查看债务表
+     *
+     * @author henry
+     * @date 2021-01-26 15:41:18
+     */
+     Debt detail(DebtParam debtParam);
 }

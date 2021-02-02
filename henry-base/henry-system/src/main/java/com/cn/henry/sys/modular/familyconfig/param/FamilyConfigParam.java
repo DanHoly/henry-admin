@@ -22,43 +22,61 @@ XiaoNuo采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注�
 5.在修改包名，模块名称，项目代码等时，请注明软件出处 https://gitee.com/xiaonuobase/xiaonuo-vue
 6.若您的项目无法满足以上几点，可申请商业授权，获取XiaoNuo商业授权许可，请在官网购买授权，地址为 https://www.xiaonuo.vip
  */
-package ${packageName}.${modularName}.${busName}.entity;
+package com.cn.henry.sys.modular.familyconfig.param;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.cn.henry.core.pojo.base.entity.BaseEntity;
+import com.cn.henry.core.pojo.base.param.BaseParam;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import java.util.*;
-#foreach ($column in $tableField)
-    #if (${column.javaType} == 'BigDecimal')
-    import java.math.BigDecimal;
-    #end
-#end
+
+import java.math.BigDecimal;
 
 /**
- * ${functionName}
+* 家庭初始配置表参数类
  *
- * @author ${authorName}
- * @date ${createDateString}
- */
-@EqualsAndHashCode(callSuper = true)
+ * @author henry
+ * @date 2021-01-25 20:00:45
+*/
 @Data
-@TableName("${tableName}")
-public class ${ClassName} extends BaseEntity {
-
-#foreach ($column in $tableField)
-#if (${column.primaryKeyFlag})
-    /**
-     * 主键
-     */
-    @TableId(type = IdType.ASSIGN_ID)
-    private ${column.javaType} ${column.columnName};
-#else
+public class FamilyConfigParam extends BaseParam {
 
     /**
-     * ${column.columnComment}
+     * 自增ID
      */
-    private ${column.javaType} ${column.columnName};
-#end
-#end
+    private Long id;
+
+
+    /**
+     * 家庭名称
+     */
+    private String name;
+
+
+    /**
+     * 初始总资产
+     */
+    private BigDecimal initMoney;
+
+
+    /**
+     * 负债
+     */
+    private BigDecimal debt;
+
+
+    /**
+     * 存款
+     */
+    private BigDecimal deposit;
+
+
+    /**
+     * 
+     */
+    private String state;
+
+
+    /**
+     * 
+     */
+    private String remark;
+
 }

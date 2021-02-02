@@ -22,43 +22,43 @@ XiaoNuo采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注�
 5.在修改包名，模块名称，项目代码等时，请注明软件出处 https://gitee.com/xiaonuobase/xiaonuo-vue
 6.若您的项目无法满足以上几点，可申请商业授权，获取XiaoNuo商业授权许可，请在官网购买授权，地址为 https://www.xiaonuo.vip
  */
-package ${packageName}.${modularName}.${busName}.entity;
+package com.cn.henry.sys.modular.familyconfig.enums;
 
-import com.baomidou.mybatisplus.annotation.*;
-import com.cn.henry.core.pojo.base.entity.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import java.util.*;
-#foreach ($column in $tableField)
-    #if (${column.javaType} == 'BigDecimal')
-    import java.math.BigDecimal;
-    #end
-#end
+import com.cn.henry.core.annotion.ExpEnumType;
+import com.cn.henry.core.exception.enums.abs.AbstractBaseExceptionEnum;
+import com.cn.henry.core.factory.ExpEnumCodeFactory;
+import com.cn.henry.sys.core.consts.SysExpEnumConstant;
 
 /**
- * ${functionName}
+ * 家庭初始配置表
  *
- * @author ${authorName}
- * @date ${createDateString}
+ * @author henry
+ * @date 2021-01-25 20:00:45
  */
-@EqualsAndHashCode(callSuper = true)
-@Data
-@TableName("${tableName}")
-public class ${ClassName} extends BaseEntity {
-
-#foreach ($column in $tableField)
-#if (${column.primaryKeyFlag})
-    /**
-     * 主键
-     */
-    @TableId(type = IdType.ASSIGN_ID)
-    private ${column.javaType} ${column.columnName};
-#else
+@ExpEnumType(module = SysExpEnumConstant.XIAONUO_SYS_MODULE_EXP_CODE, kind = SysExpEnumConstant.SYS_POS_EXCEPTION_ENUM)
+public enum FamilyConfigExceptionEnum implements AbstractBaseExceptionEnum {
 
     /**
-     * ${column.columnComment}
+     * 数据不存在
      */
-    private ${column.javaType} ${column.columnName};
-#end
-#end
+    NOT_EXIST(1, "此数据不存在");
+
+    private final Integer code;
+
+    private final String message;
+        FamilyConfigExceptionEnum(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    @Override
+    public Integer getCode() {
+        return ExpEnumCodeFactory.getExpEnumCode(this.getClass(), code);
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
 }

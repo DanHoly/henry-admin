@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import { ${className}Edit } from '@/api/modular/main/${busName}/${className}Manage'
+  import { ${className}Edit } from '@/api/modular/system/${className}Manage'
   export default {
     data () {
       return {
