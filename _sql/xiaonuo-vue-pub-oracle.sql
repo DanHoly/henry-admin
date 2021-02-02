@@ -752,7 +752,7 @@ COMMENT ON TABLE "SYS_OP_LOG" IS '系统操作日志表';
 -- ----------------------------
 -- Records of sys_op_log
 -- ----------------------------
-INSERT INTO "SYS_OP_LOG" VALUES ('1342446223284174850', '操作日志_清空', '12', 'Y', '成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', '/sysOpLog/delete', 'com.cn.xiaonuo.sys.modular.log.controller.SysLogController', 'opLogDelete', 'POST', '', '{"code":200,"message":"请求成功","success":true}', TO_DATE('2020-12-25 20:24:56', 'SYYYY-MM-DD HH24:MI:SS'), 'superAdmin');
+INSERT INTO "SYS_OP_LOG" VALUES ('1342446223284174850', '操作日志_清空', '12', 'Y', '成功', '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', '/sysOpLog/delete', 'SysLogController', 'opLogDelete', 'POST', '', '{"code":200,"message":"请求成功","success":true}', TO_DATE('2020-12-25 20:24:56', 'SYYYY-MM-DD HH24:MI:SS'), 'superAdmin');
 COMMIT;
 
 -- ----------------------------
@@ -1134,8 +1134,8 @@ COMMENT ON TABLE "SYS_TIMERS" IS '定时任务';
 -- ----------------------------
 -- Records of sys_timers
 -- ----------------------------
-INSERT INTO "SYS_TIMERS" VALUES ('1288760324837851137', '定时同步缓存常量', 'com.cn.xiaonuo.sys.modular.timer.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', '1', '定时同步sys_config表的数据到缓存常量中', TO_DATE('2020-07-30 16:56:20', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808', TO_DATE('2020-07-30 16:58:52', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808');
-INSERT INTO "SYS_TIMERS" VALUES ('1304971718170832898', '定时打印一句话', 'com.cn.xiaonuo.sys.modular.timer.tasks.SystemOutTaskRunner', '0 0 * * * ? *', '2', '定时打印一句话', TO_DATE('2020-09-13 10:34:37', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808', TO_DATE('2020-09-23 20:37:48', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808');
+INSERT INTO "SYS_TIMERS" VALUES ('1288760324837851137', '定时同步缓存常量', 'RefreshConstantsTaskRunner', '0 0/1 * * * ?', '1', '定时同步sys_config表的数据到缓存常量中', TO_DATE('2020-07-30 16:56:20', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808', TO_DATE('2020-07-30 16:58:52', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808');
+INSERT INTO "SYS_TIMERS" VALUES ('1304971718170832898', '定时打印一句话', 'SystemOutTaskRunner', '0 0 * * * ? *', '2', '定时打印一句话', TO_DATE('2020-09-13 10:34:37', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808', TO_DATE('2020-09-23 20:37:48', 'SYYYY-MM-DD HH24:MI:SS'), '1265476890672672808');
 COMMIT;
 
 -- ----------------------------

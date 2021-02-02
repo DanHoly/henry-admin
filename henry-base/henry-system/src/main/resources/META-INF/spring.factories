@@ -1,0 +1,4 @@
+org.springframework.context.ApplicationListener=\
+com.cn.henry.sys.core.listener.ConstantsInitListener,\
+com.cn.henry.sys.core.listener.TimerTaskRunListener,\
+com.cn.henry.sys.core.listener.RemoveRequestParamListener

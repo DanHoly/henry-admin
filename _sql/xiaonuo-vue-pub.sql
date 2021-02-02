@@ -609,7 +609,7 @@ CREATE TABLE `sys_op_log` (
 -- ----------------------------
 -- Records of sys_op_log
 -- ----------------------------
-INSERT INTO `sys_op_log` VALUES ('1342446223284174850', '操作日志_清空', '12', 'Y', 0xE68890E58A9F, '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', '/sysOpLog/delete', 'com.cn.xiaonuo.sys.modular.log.controller.SysLogController', 'opLogDelete', 'POST', '', '{\"code\":200,\"message\":\"请求成功\",\"success\":true}', '2020-12-25 20:24:56', 'superAdmin');
+INSERT INTO `sys_op_log` VALUES ('1342446223284174850', '操作日志_清空', '12', 'Y', 0xE68890E58A9F, '127.0.0.1', '-', 'Chrome', 'Windows 10 or Windows Server 2016', '/sysOpLog/delete', 'SysLogController', 'opLogDelete', 'POST', '', '{\"code\":200,\"message\":\"请求成功\",\"success\":true}', '2020-12-25 20:24:56', 'superAdmin');
 
 -- ----------------------------
 -- Table structure for `sys_org`
@@ -929,8 +929,8 @@ CREATE TABLE `sys_timers` (
 -- ----------------------------
 -- Records of sys_timers
 -- ----------------------------
-INSERT INTO `sys_timers` VALUES ('1288760324837851137', '定时同步缓存常量', 'com.cn.xiaonuo.sys.modular.timer.tasks.RefreshConstantsTaskRunner', '0 0/1 * * * ?', '1', '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', '1265476890672672808', '2020-07-30 16:58:52', '1265476890672672808');
-INSERT INTO `sys_timers` VALUES ('1304971718170832898', '定时打印一句话', 'com.cn.xiaonuo.sys.modular.timer.tasks.SystemOutTaskRunner', '0 0 * * * ? *', '2', '定时打印一句话', '2020-09-13 10:34:37', '1265476890672672808', '2020-09-23 20:37:48', '1265476890672672808');
+INSERT INTO `sys_timers` VALUES ('1288760324837851137', '定时同步缓存常量', 'RefreshConstantsTaskRunner', '0 0/1 * * * ?', '1', '定时同步sys_config表的数据到缓存常量中', '2020-07-30 16:56:20', '1265476890672672808', '2020-07-30 16:58:52', '1265476890672672808');
+INSERT INTO `sys_timers` VALUES ('1304971718170832898', '定时打印一句话', 'SystemOutTaskRunner', '0 0 * * * ? *', '2', '定时打印一句话', '2020-09-13 10:34:37', '1265476890672672808', '2020-09-23 20:37:48', '1265476890672672808');
 
 -- ----------------------------
 -- Table structure for `sys_user`
